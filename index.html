@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleSheets.css">
+    <title>MCQ Quiz</title>
+</head>
+<body>
+    <h1>Quiz on Space</h1>
+    <center>
+    <img src="https://th.bing.com/th/id/R.767432011da2fdff0a653adb622045c2?rik=KUoUYA2RXOAT1w&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f01%2f72122-planet-space.jpg&ehk=UOgDgYlBiaAKRB5ywMZrl0EHU2SzvkdfEta449R8748%3d&risl=&pid=ImgRaw&r=0" alt=""><br><br>
+    <h3 id="sc"></h3>
+    <div id="question"><br>
+        
+    </div><br>
+    <div id="option1" onclick="checkAnswer(this)">
+
+    </div><br>
+    <div id="option2" onclick="checkAnswer(this)">
+
+    </div><br>
+    <div id="option3" onclick="checkAnswer(this)">
+
+    </div><br><br>
+    <button id="nextquestion" onclick="changeQuestion()">Next Question</button>
+    </center>
+    <script>
+        let score=0
+        mcq=[
+            question1={
+                que:"What is the 3ed Planet for the Sun?",
+                opt1:"Mars",
+                opt2:"Earth",
+                opt3:"Saturen",
+                cop:"Earth",
+            },
+            question2={
+                que:"What is the Sun made of?",
+                opt1:"Gas",
+                opt2:"Light",
+                opt3:"Rocks",
+                cop:"Gas",
+            },
+            question3={
+                que:"Define Light Years.",
+                opt1:"Light Years is how far light can traval in a year.",
+                opt2:"Light Years is fast light travels in a year.",
+                opt3:"Light Years is how long light travels in a year.",
+                cop:"Light Years is how far light can traval in a year.",
+            },
+            question4={
+                que:"How Did the Universe Begin?",
+                opt1:"The Big Bang Theroy",
+                opt2:"The Universe isn't made, its just a different version of somithing else",
+                opt3:"IDK (I Don't Know)",
+                cop:"The Big Bang Theroy",
+            },
+            question5={
+                que:"How long do Stars live?",
+                opt1:"A Million Years",
+                opt2:"Ten Million Years",
+                opt3:"A Billion Years",
+                cop:"A Billion Years",
+            },
+            question6={
+                que:"How many Stars are in the Milkyway Galaxy",
+                opt1:"A Million Stars",
+                opt2:"400 Billion Stars",
+                opt3:"10 Trillion Stars",
+                cop:"400 Billion Stars",
+            }
+        ]
+        let i=0
+        document.getElementById("question").innerText=mcq[i].que
+        document.getElementById("option1").innerText=mcq[i].opt1
+        document.getElementById("option2").innerText=mcq[i].opt2
+        document.getElementById("option3").innerText=mcq[i].opt3
+        function changeQuestion(){
+            i=i+1
+        document.getElementById("question").innerText=mcq[i].que
+        document.getElementById("option1").innerText=mcq[i].opt1
+        document.getElementById("option2").innerText=mcq[i].opt2
+        document.getElementById("option3").innerText=mcq[i].opt3
+        document.getElementById("option1").style.backgroundColor="gold"
+        document.getElementById("option2").style.backgroundColor="gold"
+        document.getElementById("option3").style.backgroundColor="gold"
+        }
+        function checkAnswer(clickedOption){
+            if (clickedOption.innerText==mcq[i].cop){
+                clickedOption.style.backgroundColor="green"
+                score=score+1
+                document.getElementById("sc").innerText=score
+            }
+            else{
+                clickedOption.style.backgroundColor="red"
+            }
+        }
+    </script>
+
+</body>
+</html>
